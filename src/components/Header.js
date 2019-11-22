@@ -22,7 +22,8 @@ const Header = (props) => {
                         <Nav {...history} fetch={props.fetch} /> 
                     </React.Fragment> } />
             {/* ↑ This route shows no matter what ↑ */}
-        {/*  =======================================================================                                               The following is rendered using Switch and conditionals                          
+        {/*  =======================================================================  
+                    The following is rendered using Switch and conditionals                          
              =======================================================================  */}    
 
                 {props.isloading /* ← if true... */
