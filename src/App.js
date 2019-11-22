@@ -2,33 +2,44 @@ import React from 'react';
 
 // API Key
 import { apiKey } from './config.js';
-
-// Components modules
+// Component
 import Header from './components/Header';
 
 class App extends React.Component {
   constructor (props) {
     super(props);
-    this.getPhotoData = this.getPhotoData.bind(this);
+    this.getPhotoData = this.getPhotoData.bind(this); // Binds getPhotoData to App
+    this.updateTagForTitle = this.updateTagForTitle.bind(this); // Binds updateTagForTitle to App
     this.state = {
       url: "https://www.flickr.com/services/rest/?method=flickr.photos.search",
       imgData: [],
       imgLinks: [],
-      tag: "pizza",
+      tag: null,
       isLoading: true,
       error: null
     };
   }
 
+  /**
+   * After mount, calls getPhotoData
+   */
   componentDidMount () {
-    this.getPhotoData(this.state.tag);
-    this.props.history.push(`/search/${this.state.tag}`);
+    this.getPhotoData("pizza");
+    // this.props.history.push(`/search/${this.state.tag}`);
   }
 
+  /**
+   * Builds string for <img> src path
+   * @param {object} data | Object from fetch request
+   */
   buildImgSrcStr (data) {
     return `https://farm${data.farm}.staticflickr.com/${data.server}/${data.id}_${data.secret}_m.jpg`
   }
 
+  /**
+   * Requests photo objects from flickr API
+   * @param {string} tag | query string for fetch request
+   */
   getPhotoData (tag) {
     let qString = `&api_key=${apiKey}&tags=${tag}&per_page=24&safe_search=1&format=json&nojsoncallback=1`;
     fetch(this.state.url.concat(qString))
@@ -41,6 +52,16 @@ class App extends React.Component {
       .catch(error => this.setState({error}))
   }
 
+  /**
+   * Updates tag state, which is passed to Header and used as title of page
+   * @param {string} tag | string for dynamic title
+   */
+  updateTagForTitle (tag) {
+    this.setState({
+      tag
+    })
+  }
+
   render () {
     return (
         <div className="App">
@@ -48,9 +69,9 @@ class App extends React.Component {
               imgLinks={this.state.imgLinks}
               imgData={this.state.imgData}
               fetch={this.getPhotoData}
-              handleChange={this.handleChange}
               title={this.state.tag}
-              isloading={this.isLoading}
+              isloading={this.state.isLoading}
+              pageNotFound={this.updateTagForTitle}
           />
         </div>
     );

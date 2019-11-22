@@ -2,7 +2,12 @@ import React from 'react';
 
 class SearchForm extends React.Component {
 
-
+    /**
+     * Prevents form from submitting,
+     * pushes a new path onto the history object,
+     * and calls the getPhotoData func in App before clearing the input
+     * @param {Event object} evt | Synthetic onClick event
+     */
     handleSubmit = async (evt) => {
         evt.preventDefault();
         this.props.history.push(`/search/${this.query.value}`);
@@ -17,7 +22,7 @@ class SearchForm extends React.Component {
                     type="search" 
                     name="search" 
                     placeholder="Search" 
-                    ref={(input) => this.query = input}
+                    ref={(input) => this.query = input} // Stores reference to input element in this.query variable
                     required
                 />
                 <button 
