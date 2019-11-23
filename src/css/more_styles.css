@@ -17,3 +17,13 @@ li {
 .page-not-found {
     font-size: 4em;
 }
+
+.italics {
+    font-style: italic;
+}
+
+.video-container {
+    width: fit-content;
+    margin: auto;
+    margin-top: 2.5em;
+}
