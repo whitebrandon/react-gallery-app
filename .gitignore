@@ -2,6 +2,10 @@
 
 package-lock.json
 src/config.js
+src/App.test.js
+src/serviceWorker.js
+public/manifest.json
+public/robots.txt
 
 # dependencies
 /node_modules
