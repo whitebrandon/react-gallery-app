@@ -1,14 +1,23 @@
+/******************************************
+Treehouse Techdegree:
+FSJS project 7 - React Gallery App
+Name: Brandon White
+Date of Last Modification: 22/11/2019
+******************************************/
+
 import React from 'react';
 import Image from './Image';
 
 const PhotoContainer = (props) => {
     return (
             <ul>
-                {props.imgLinks.map((item, i) => <Image src={item} key={props.imgData[i].id} /> )}
+                {props.imgLinks.map((item, i) => <Image 
+                                                    src={item} 
+                                                    key={props.imgData[i].id} 
+                                                    alt={props.imgData[i].title} 
+                                                 /> )}
             </ul>
     );
 }
 
 export default PhotoContainer;
-
-// this.props.url.map((item, i) => <Image url={item} key={this.props.image[i].id} /> )

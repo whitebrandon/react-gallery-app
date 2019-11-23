@@ -1,9 +1,16 @@
+/******************************************
+Treehouse Techdegree:
+FSJS project 7 - React Gallery App
+Name: Brandon White
+Date of Last Modification: 22/11/2019
+******************************************/
+
 import React from 'react';
 
 const Image = (props) => {
     return (
         <li>
-            <img src={props.src} alt="" />
+            <img src={props.src} alt={props.alt} />
         </li>
     )
 };
