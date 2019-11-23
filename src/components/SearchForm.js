@@ -11,12 +11,22 @@ class SearchForm extends React.Component {
 
     componentDidMount() {
         /**
-         * On mount, sets a timer to change the value of the search input placeholder
-         * Van Halen Easter Egg
+         * On mount, starts a 2.5s timer to change the value of the search input placeholder
+         * This is a Van Morrison Easter Egg #singer of 1967 pop rock hit Brown Eyed Girl
          */
         setTimeout(() => {
-            this.query.placeholder = "Search";
-        }, 5000)
+            const placeholderText = "Search";
+            let index = -1;    
+            const placeholderFunc = setInterval(() => {
+                if (this.query.placeholder === "Van Morrison") {
+                    this.query.placeholder = "";
+                }
+                this.query.placeholder += placeholderText[++index];
+                if (index === placeholderText.length -1) {
+                    clearInterval(placeholderFunc);
+                }
+            }, 300);
+        }, 2500 )
     }
 
     /**
@@ -25,10 +35,10 @@ class SearchForm extends React.Component {
      * and calls the getPhotoData func in App before clearing the input
      * @param {Event object} evt | Synthetic onClick event
      */
-    handleSubmit = async (evt) => {
+    handleSubmit = (evt) => {
         evt.preventDefault();
         this.props.history.push(`/search/${this.query.value}`);
-        await this.props.fetch(this.query.value);
+        this.props.fetch(this.query.value);
         this.query.value = "";
     }
     

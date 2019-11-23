@@ -56,7 +56,10 @@ class App extends React.Component {
         imgData: res.photos.photo, 
         imgLinks: res.photos.photo.map(img => this.buildImgSrcStr(img)),
         isLoading: false}))
-      .catch(error => this.setState({error}))
+      .catch(error => {
+        this.setState({error});
+        console.error("There was an error: " + error);
+      })
   }
 
   /**
