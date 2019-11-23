@@ -4,7 +4,11 @@ import Image from './Image';
 const PhotoContainer = (props) => {
     return (
             <ul>
-                {props.imgLinks.map((item, i) => <Image src={item} key={props.imgData[i].id} /> )}
+                {props.imgLinks.map((item, i) => <Image 
+                                                    src={item} 
+                                                    key={props.imgData[i].id} 
+                                                    alt={props.imgData[i].title} 
+                                                 /> )}
             </ul>
     );
 }
