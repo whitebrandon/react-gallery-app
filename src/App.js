@@ -24,8 +24,7 @@ class App extends React.Component {
    * After mount, calls getPhotoData
    */
   componentDidMount () {
-    this.getPhotoData("pizza");
-    // this.props.history.push(`/search/${this.state.tag}`);
+    this.getPhotoData(this.props.match.params.params || "brown");
   }
 
   /**
@@ -42,6 +41,7 @@ class App extends React.Component {
    */
   getPhotoData (tag) {
     let qString = `&api_key=${apiKey}&tags=${tag}&per_page=24&safe_search=1&format=json&nojsoncallback=1`;
+    this.setState({ isLoading: true });
     fetch(this.state.url.concat(qString))
       .then(res => res.json())
       .then(res => this.setState({
