@@ -10,8 +10,6 @@ import {
     NavLink,
   } from 'react-router-dom';
 
-// Components
-
 const Nav = (props) => { 
     return (
         <React.Fragment>
