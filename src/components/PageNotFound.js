@@ -1,3 +1,10 @@
+/******************************************
+Treehouse Techdegree:
+FSJS project 8 - React Gallery App
+Name: Brandon White
+Date of Last Modification: 22/11/2019
+******************************************/
+
 import React from 'react';
 
 class PageNotFound extends React.Component {

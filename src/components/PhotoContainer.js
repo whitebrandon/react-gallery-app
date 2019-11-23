@@ -1,3 +1,10 @@
+/******************************************
+Treehouse Techdegree:
+FSJS project 8 - React Gallery App
+Name: Brandon White
+Date of Last Modification: 22/11/2019
+******************************************/
+
 import React from 'react';
 import Image from './Image';
 
@@ -14,5 +21,3 @@ const PhotoContainer = (props) => {
 }
 
 export default PhotoContainer;
-
-// this.props.url.map((item, i) => <Image url={item} key={this.props.image[i].id} /> )

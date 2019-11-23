@@ -1,3 +1,10 @@
+/******************************************
+Treehouse Techdegree:
+FSJS project 8 - React Gallery App
+Name: Brandon White
+Date of Last Modification: 22/11/2019
+******************************************/
+
 import React from 'react';
 
 class SearchForm extends React.Component {
@@ -5,6 +12,7 @@ class SearchForm extends React.Component {
     componentDidMount() {
         /**
          * On mount, sets a timer to change the value of the search input placeholder
+         * Van Halen Easter Egg
          */
         setTimeout(() => {
             this.query.placeholder = "Search";
