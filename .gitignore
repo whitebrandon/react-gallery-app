@@ -6,6 +6,7 @@ src/App.test.js
 src/serviceWorker.js
 public/manifest.json
 public/robots.txt
+/.netlify
 
 # dependencies
 /node_modules
