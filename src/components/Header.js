@@ -40,7 +40,7 @@ const Header = (props) => {
 
                     <Switch>
                         <Route exact path="/">
-                            <Redirect to="/search/pizza" /> {/* Redirect to /search/pizza */}
+                            <Redirect to="/search/brown" /> {/* Redirect to /search/brown */}
                         </Route>
 
                         {
@@ -49,6 +49,7 @@ const Header = (props) => {
                             ?   /* ↓ RENDER the PHOTOCONTAINER component */
                             
                             <Route 
+                                exact
                                 path="/search/:tag" 
                                 render={history => 
                                     <PhotoContainer 

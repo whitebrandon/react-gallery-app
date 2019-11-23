@@ -2,6 +2,15 @@ import React from 'react';
 
 class SearchForm extends React.Component {
 
+    componentDidMount() {
+        /**
+         * On mount, sets a timer to change the value of the search input placeholder
+         */
+        setTimeout(() => {
+            this.query.placeholder = "Search";
+        }, 5000)
+    }
+
     /**
      * Prevents form from submitting,
      * pushes a new path onto the history object,
@@ -21,7 +30,7 @@ class SearchForm extends React.Component {
                 <input 
                     type="search" 
                     name="search" 
-                    placeholder="Search" 
+                    placeholder="Van Morrison" 
                     ref={(input) => this.query = input} // Stores reference to input element in this.query variable
                     required
                 />
