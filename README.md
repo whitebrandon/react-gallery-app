@@ -1,8 +1,4 @@
-# TECH DEGREE PROJECT #7 | REACT GALLERY APP
-
-a COURSE BY TREEHOUSE
-
-JS CODE by Brandon White | white.brandonsean@gmail.com
+# REACT GALLERY APP
 
 An SPA image gallery created with the React library.
 
