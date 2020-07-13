@@ -1,6 +1,5 @@
 /******************************************
-Treehouse Techdegree:
-FSJS project 7 - React Gallery App
+React Gallery App
 Name: Brandon White
 Date of Last Modification: 22/11/2019
 ******************************************/
